@@ -29,7 +29,7 @@ bihar_adult_females_trunc <-filter(bihar_adult_females, height_cm>120, height_cm
 ggplot(bihar_adult_females_trunc, aes(height_cm))+
   geom_histogram(fill="blue", color="darkblue")+
   xlab("Height in centimeters, Bihar Females")
-ggsave("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/bihar_better.pdf")
+ggsave(".../bihar_better.pdf")
 
 # playing with the bins 
 
@@ -57,11 +57,11 @@ bihar4 <- ggplot(bihar_adult_females_trunc, aes(height_cm))+
   ylab("")
 
 plot_grid(bihar1, bihar2, bihar3, bihar4, labels="Female Height in Bihar", hjust=-1, vjust=0.2)
-ggsave("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/bihargrid.pdf")
+ggsave(".../bihargrid.pdf")
 
 
 #US Data from National Health and Nutrition Examination Survey
-us_data <- read.csv("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/US_sample_data.csv")
+us_data <- read.csv(".../US_sample_data.csv")
 
 print(us_data)
 
@@ -75,7 +75,7 @@ print(us_adult_females_trunc)
 ggplot(us_adult_females_trunc, aes(height_cm))+
   geom_histogram(fill="red", color="darkred")+
   xlab("Height in centimeters, US females")
-ggsave("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/US_better.pdf")
+ggsave("../US_better.pdf")
 
 
 
@@ -86,7 +86,7 @@ ggplot(us_adult_females_trunc, aes(height_cm))+
   geom_histogram(data=us_adult_females_trunc, aes(height_cm , ..density..), fill="white" , color="darkred")+
   geom_density(kernel="gaussian", aes(height_cm))
 
-ggsave("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/US_kernel.pdf")
+ggsave("../US_kernel.pdf")
 
 
 #playing with the bandwidth
@@ -116,7 +116,7 @@ US4 <- ggplot(us_adult_females_trunc, aes(height_cm))+
   ylab("")
 
 plot_grid(US1, US2, US3, US4, labels="Female Height in the US", hjust=-1, vjust=0.2)
-ggsave("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/US_kerneltries.pdf")
+ggsave("../US_kerneltries.pdf")
 
 #combining the two histograms
 ggplot(bihar_adult_females_trunc, aes(height_cm))+
@@ -138,7 +138,7 @@ ggplot(bihar_adult_females_trunc, aes(height_cm))+
   geom_freqpoly(data=us_adult_females_trunc, aes(height_cm , ..density..),  color="darkred" )+
   xlab("Height in centimeters")
 
-ggsave("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/comparehistograms.pdf")
+ggsave("../comparehistograms.pdf")
 
 # Kernel density
 
@@ -147,7 +147,7 @@ ggplot(bihar_adult_females_trunc, aes(height_cm))+
   geom_density(data=us_adult_females_trunc, aes(height_cm),  color="darkred" )+
   xlab("Height in centimeters")
 
-ggsave("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/heightkernel.pdf")
+ggsave("../heightkernel.pdf")
 
 # Representing the CDF
 
@@ -156,6 +156,6 @@ ggplot(bihar_adult_females_trunc, aes(height_cm))+
   stat_ecdf(data=us_adult_females_trunc, aes(height_cm),  color="darkred" )+
   xlab("Height in centimeters")
 
-ggsave("/Users/Micaela/Documentos/BigData/Data Analysis/Problem Sets/Set 5 - Distributions/heightcdf.pdf")
+ggsave("../heightcdf.pdf")
 
 # First order stochastic dominance of US over Bihar given that heights_cm are heigher.
